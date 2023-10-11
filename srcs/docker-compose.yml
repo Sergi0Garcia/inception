@@ -15,6 +15,7 @@ services:
     volumes: 
       - ./requirements/nginx/conf:/etc/nginx/http.d/
       - ./requirements/nginx/tools:/etc/nginx/ssl
+      - wp-volume:/var/www/
     restart: always
   mariadb:
     build:
@@ -30,6 +31,8 @@ services:
        - "3306:3306"
     networks:
       - inception
+    volumes: 
+      - db-volume:/var/lib/mysql
     restart: always
   wordpress:
     build:
@@ -45,6 +48,20 @@ services:
     depends_on:
       - mariadb
     restart: always
+    volumes: 
+      - wp-volume:/var/www/
   
+volumes:
+  wp-volume:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/segarcia/data/wordpress
+  db-volume:
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/segarcia/data/mariadb
+        
 networks:
   inception:
