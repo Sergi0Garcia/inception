@@ -1,14 +1,18 @@
-NAME	= inception
+NAME							= inception
 
+DOPPLER_PATH			=/home/linuxbrew/.linuxbrew/Cellar/doppler/3.66.3/bin/doppler
+DOPPLER_RUN				=${DOPPLER_PATH} run --
 
-DOPPLER_PATH=/home/linuxbrew/.linuxbrew/Cellar/doppler/3.66.3/bin/doppler
-DOPPLER_RUN=${DOPPLER_PATH} run --  
+RED								= \e[31m
+GREEN							=	\e[92;5;118m
+PURPLE 						= \e[95m
+RESET							=	\e[0m
+CURSIVE						=	\e[33;3m
 
-
-
-all:
-	@printf "Launch configuration ${name}...\n"
+all: ${NAME}
+	@printf "$(CURSIVE)$(GREEN)- Building ${NAME} ...\n$(RESET)"
 	@bash srcs/requirements/wordpress/tools/make_dir.sh
+	@printf "$(CURSIVE)$(PRUPLE)- Launching docker infra ...\n$(RESET)"
 	@${DOPPLER_RUN} docker-compose -f ./srcs/docker-compose.yml up -d
 
 build:
