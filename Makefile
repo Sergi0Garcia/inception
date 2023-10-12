@@ -1,13 +1,20 @@
-name = inception
+NAME	= inception
+
+
+DOPPLER_PATH=/home/linuxbrew/.linuxbrew/Cellar/doppler/3.66.3/bin/doppler
+DOPPLER_RUN=${DOPPLER_PATH} run --  
+
+
+
 all:
 	@printf "Launch configuration ${name}...\n"
 	@bash srcs/requirements/wordpress/tools/make_dir.sh
-	@docker-compose -f ./srcs/docker-compose.yml up -d
+	@${DOPPLER_RUN} docker-compose -f ./srcs/docker-compose.yml up -d
 
 build:
 	@printf "Building configuration ${name}...\n"
 	@bash srcs/requirements/wordpress/tools/make_dir.sh
-	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d --build
+	@${DOPPLER_RUN} docker-compose -f ./srcs/docker-compose.yml -d --build
 
 down:
 	@printf "Stopping configuration ${name}...\n"
