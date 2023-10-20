@@ -13,7 +13,7 @@ all:
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n$(RESET)"
 	@bash srcs/requirements/wordpress/tools/make_dir.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
-	@${DOPPLER_RUN} docker-compose -f ./srcs/docker-compose.yml up -d
+	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
