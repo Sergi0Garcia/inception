@@ -31,7 +31,7 @@ build:
 
 down:
 	@printf "$(CURSIVE)$(RED)Stopping configuration ${NAME}...\n $(RESET)"
-	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env down
+	@docker-compose -f ./srcs/docker-compose.yml down
 
 re:
 	@printf "$(CURSIVE)$(GREEN)Rebuild configuration ${NAME}...\n $(RESET)"
@@ -39,7 +39,7 @@ re:
 
 clean: down
 	@printf "$(CURSIVE)$(RED)Cleaning docker ${NAME}... $(RESET)\n"
-	@docker system prune -a
+	@docker system prune --all --force
 
 fclean:
 	@printf "$(CURSIVE)$(RED)Cleaning all docker configurations ... $(RESET)\n"
