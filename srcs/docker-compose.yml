@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: requirements/nginx/Dockerfile
     container_name: nginx
+    image: my_nginx:1.0
     depends_on:
        - wordpress
     ports:
@@ -27,8 +28,7 @@ services:
         DB_PASS: ${DB_PASS}
         DB_ROOT_PASS: ${DB_ROOT_PASS}
     container_name: mariadb
-    ports:
-       - "3306:3306"
+    image: my_mariadb:1.0
     networks:
       - inception
     volumes: 
@@ -44,6 +44,7 @@ services:
         DB_PASS: ${DB_PASS}
         DB_ROOT_PASS: ${DB_ROOT_PASS}
     container_name: wordpress
+    image: my_wordpress:1.0
     networks: 
       - inception
     depends_on:

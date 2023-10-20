@@ -1,5 +1,7 @@
 FROM alpine:3.17
 
+LABEL tag="mariadb"
+
 ARG DB_NAME \
     DB_USER \
     DB_PASS
@@ -18,10 +20,8 @@ RUN mkdir /var/run/mysqld; \
 
 RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
-EXPOSE 3306
-
 COPY requirements/mariadb/conf/create_db.sh .
 RUN sh create_db.sh && rm create_db.sh
 
 USER mysql
-CMD ["/usr/bin/mysqld", "--skip-log-error"]
+CMD ["/usr/bin/mysqld"]
