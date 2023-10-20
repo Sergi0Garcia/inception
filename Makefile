@@ -8,6 +8,13 @@ PURPLE 		= \e[95m
 RESET		= \e[0m
 CURSIVE		= \e[33;3m
 
+dsetup:
+	@if [ -z "$(DOPPLER_TOKEN)" ]; then \
+        	printf "$(CURSIVE)$(RED)[REQUIRED] DOPPLER_TOKEN NOT SET$(RESET)\n"; \
+    	else \
+        	printf "$(CURSIVE)$(GREEN)-Setting doppler in scope\n"; \
+		$(DOPPLER_PATH) configure set token $(DOPPLER_TOKEN); \
+    	fi
 all:
 	@printf "$(CURSIVE)$(GREEN)- Building ${NAME} ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n$(RESET)"
@@ -16,9 +23,8 @@ all:
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 
 denv:
-	@printf"$(CURSIVE)$(GREEN)- Downloading env files from doppler"
+	@printf "$(CURSIVE)$(GREEN)- Downloading env files from doppler\n$(RESET)"
 	@bash ./srcs/requirements/tools/download_env.sh
-
 
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
