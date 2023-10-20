@@ -15,6 +15,11 @@ all:
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 
+denv:
+	@printf"$(CURSIVE)$(GREEN)- Downloading env files from doppler"
+	@bash ./srcs/requirements/tools/download_env.sh
+
+
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n"
