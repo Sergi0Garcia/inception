@@ -46,6 +46,7 @@ fclean:
 	@docker stop $$(docker ps -qa)
 	@docker system prune --all --force
 	@docker network prune --force
+	@docker volume rm $$(docker volume ls -q)
 
 # -------------------------------------------------------------
 # 			DOPPLER SETUP
