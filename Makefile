@@ -68,4 +68,4 @@ denv:
 
 # --------------------------------------------------------------
 
-.PHONY	: all build down re clean fclean
+.PHONY	: all build down re clean fclean dinstall dsetup denv
