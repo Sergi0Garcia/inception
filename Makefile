@@ -18,14 +18,14 @@ CURSIVE		= \e[33;3m
 all:	
 	@printf "$(CURSIVE)$(GREEN)- Building ${NAME} ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n$(RESET)"
-	@bash srcs/requirements/wordpress/tools/make_dir.sh
+	@bash srcs/requirements/tools/make_dir.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n"
-	@bash srcs/requirements/wordpress/tools/make_dir.sh
+	@bash srcs/requirements/tools/make_dir.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose -- build ...\n$(RESET)"
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env build
 
