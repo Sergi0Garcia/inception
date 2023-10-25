@@ -19,6 +19,8 @@ all:
 	@printf "$(CURSIVE)$(GREEN)- Building ${NAME} ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n$(RESET)"
 	@bash srcs/requirements/tools/make_dir.sh
+	@printf "$(CURSIVE)$(GREEN)- Creating certificates SSL ...\n$(RESET)"
+	@bash srcs/requirements/tools/make_certs.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 
@@ -26,13 +28,17 @@ drun:
 	@printf "$(CURSIVE)$(GREEN)- Building with doppler ${NAME} ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n$(RESET)"
 	@bash srcs/requirements/tools/make_dir.sh
+	@printf "$(CURSIVE)$(GREEN)- Creating certificates SSL ...\n$(RESET)"
+	@bash srcs/requirements/tools/make_certs.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
 	@${DOPPLER_RUN} docker-compose -f ./srcs/docker-compose.yml up -d
 
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n"
-	@bash srcs/requirements/tools/make_dir.sh
+	@bash srcs/requirements/tools/make_dir.shi
+	@printf "$(CURSIVE)$(GREEN)- Creating certificates SSL ...\n$(RESET)"
+	@bash srcs/requirements/tools/make_certs.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose -- build ...\n$(RESET)"
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env build
 
@@ -76,4 +82,4 @@ denv:
 
 # --------------------------------------------------------------
 
-.PHONY	: all build down re clean fclean dinstall dsetup denv
+.PHONY	: all build down re clean fclean
