@@ -8,6 +8,7 @@ if [ -e "$directory/$cert_name" ]; then
 	echo "CERTS FOUND"
 else
 	mkcert segarcia.42.fr
-	mv segarcia.42.fr.pem ./srcs/requirements/nginx/tools/segarcia.42.fr.crt
-	mv segarcia.42.fr-key.pem ./srcs/requirements/nginx/tools/segarcia.42.fr.key
+	mkdir -p $directory/tools
+	mv segarcia.42.fr.pem $directory/segarcia.42.fr.crt
+	mv segarcia.42.fr-key.pem $directory/segarcia.42.fr.key
 fi
