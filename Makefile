@@ -22,6 +22,13 @@ all:
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
 	@docker-compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 
+drun: 
+	@printf "$(CURSIVE)$(GREEN)- Building with doppler ${NAME} ...\n$(RESET)"
+	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n$(RESET)"
+	@bash srcs/requirements/tools/make_dir.sh
+	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose up ...\n$(RESET)"
+	@${DOPPLER_RUN} docker-compose -f ./srcs/docker-compose.yml up -d
+
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n"
