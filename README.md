@@ -6,8 +6,11 @@ machine.
 
 ## Rules
 
-### make dinstall
+### `make dinstall`
 Make rule to install doppler (https://www.doppler.com/) CLI to the VM
 
-### make dsetup
+### `make dsetup`
 Make rule to setup doppler project and environment in the VM. We need to have a DOPPLER_TOKEN in this part to set everything correclty. After setting doppler CLI and setting the project we can access the secrets in the terminal with `doppler secrets`
+
+### `make denv`
+Make rule to download all doppler secrets into a .env file in srcs/.env
