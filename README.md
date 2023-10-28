@@ -45,23 +45,6 @@ Make rule to to delete all Docker related stuff as make clean but it also delete
 
 ## `docker network inspect <inception_netwrok>`
 
-` "Containers": {
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
-                "Name": "mariadb",
-                "EndpointID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                "IPv4Address": "172.18.0.2/16",
-                "IPv6Address": ""
-            },
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
-                "Name": "nginx",
-                "EndpointID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                "IPv4Address": "172.18.0.4/16",
-                "IPv6Address": ""
-            },
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
-                "Name": "wordpress",
-                "EndpointID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                "IPv4Address": "172.18.0.3/16",
-                "IPv6Address": ""
-            }
-        },`
+` "IPv4Address": "172.18.0.2/16" `
+` "IPv4Address": "172.18.0.4/16" `
+` "IPv4Address": "172.18.0.3/16" `
