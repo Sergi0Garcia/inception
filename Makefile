@@ -54,9 +54,8 @@ clean: down
 	@printf "$(CURSIVE)$(RED)Cleaning docker ${NAME}... $(RESET)\n"
 	@docker system prune --all --force
 
-fclean:
+fclean: clean
 	@printf "$(CURSIVE)$(RED)Cleaning all docker configurations ... $(RESET)\n"
-	@docker stop $$(docker ps -qa)
 	@docker system prune --all --force
 	@docker network prune --force
 	@docker volume rm $$(docker volume ls -q)
