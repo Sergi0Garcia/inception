@@ -37,7 +37,7 @@ Make rule to to delete all Docker related stuff as make clean but it also delete
 ## Hacks
 * `docker ps` Check all docker processes running
 * `docker images` List all images created locally
-`docker volume ls` List all volumes
-`docker volume inspect <volume_name>` Extra info about voluem
-`docker network ls` List all networks
-`docker exec -it <container_id> sh` Jump into runnig container in interactive mode with entrypoint as sh
+* `docker volume ls` List all volumes
+* `docker volume inspect <volume_name>` Extra info about voluem
+* `docker network ls` List all networks
+* `docker exec -it <container_id> sh` Jump into runnig container in interactive mode with entrypoint as sh
