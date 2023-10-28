@@ -8,7 +8,7 @@ if [ -e "$directory/tools/$cert_name" ] && [ -e "$directory/tools/$cert_key"]; t
 	echo "CERTS FOUND"
 else
 	if [ -d "$directory/tools" ]; then
-		rm -r "$directory/tools"
+		rm -rf "$directory/tools"
 	fi
 
 	mkcert segarcia.42.fr
