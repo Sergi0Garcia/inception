@@ -4,9 +4,13 @@ directory="./srcs/requirements/nginx"
 cert_name="segarcia.42.fr.crt"
 cert_key="segarcia.42.fr.key"
 
-if [ -e "$directory/$cert_name" ]; then
+if [ -e "$directory/tools/$cert_name" ] && [ -e "$directory/tools/$cert_key"]; then
 	echo "CERTS FOUND"
 else
+	if [ -d "$directory/tools" ]; then
+		rm -r "$directory/tools"
+	fi
+
 	mkcert segarcia.42.fr
 	mkdir -p $directory/tools
 	mv segarcia.42.fr.pem $directory/tools/segarcia.42.fr.crt
