@@ -45,6 +45,6 @@ Make rule to to delete all Docker related stuff as make clean but it also delete
 
 ## `docker network inspect <inception_netwrok>`
 
-` "IPv4Address": "172.18.0.2/16" `
-` "IPv4Address": "172.18.0.4/16" `
-` "IPv4Address": "172.18.0.3/16" `
+* ` "IPv4Address": "172.18.0.2/16" `
+* ` "IPv4Address": "172.18.0.4/16" `
+* ` "IPv4Address": "172.18.0.3/16" `
