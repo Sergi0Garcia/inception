@@ -41,9 +41,9 @@ Make rule to to delete all Docker related stuff as make clean but it also delete
 * `docker volume inspect <volume_name>` Extra info about volumes
 * `docker network ls` List all networks
 * `docker exec -it <container_id> sh` Jump into runnig container in interactive mode with entrypoint as sh
-* `docker network inspect <network_id>` Shows extra info about the network config (Docker compose manages netwroking extremelly good)
+* `docker network inspect <network_id>` Shows extra info about the network config (Docker compose manages networking really good)
 
-## `docker network inspect <inception_netwrok>`
+## `docker network inspect <inception_network>`
 
 * ` "IPv4Address": "172.18.0.2/16" `
 * ` "IPv4Address": "172.18.0.4/16" `
