@@ -38,6 +38,30 @@ Make rule to to delete all Docker related stuff as make clean but it also delete
 * `docker ps` Check all docker processes running
 * `docker images` List all images created locally
 * `docker volume ls` List all volumes
-* `docker volume inspect <volume_name>` Extra info about voluem
+* `docker volume inspect <volume_name>` Extra info about volumes
 * `docker network ls` List all networks
 * `docker exec -it <container_id> sh` Jump into runnig container in interactive mode with entrypoint as sh
+* `docker network inspect <network_id>` Shows extra info about the network config (Docker compose manages netwroking extremelly good)
+
+## `docker network inspect <inception_netwrok>`
+
+` "Containers": {
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
+                "Name": "mariadb",
+                "EndpointID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            },
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
+                "Name": "nginx",
+                "EndpointID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "IPv4Address": "172.18.0.4/16",
+                "IPv6Address": ""
+            },
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX": {
+                "Name": "wordpress",
+                "EndpointID": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            }
+        },`
