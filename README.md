@@ -15,22 +15,22 @@ Make rule to setup doppler project and environment in the VM. We need to have a 
 ### `make denv`
 Make rule to download all doppler secrets into a .env file in srcs/.env
 
-### make drun
+### `make drun`
 Make rule to run all Docker infra with doppler env files injected into docker compose. We do not need to download the env file for this command. Docker images are built if not created, we create our dir for our volumes and we also create our SSL certificates. 
 
-### make 
+### `make`
 Make rule to run all Docker infra with .env file and docker compose. We NEED to download the env file for this command. Docker images are built if not created, we create our dir for our volumes and we also create our SSL certificates. 
 
-### make build
+### `make build`
 Make rule to build all the Docker images (nginx, mariadb, wordpress 8.2) with docker compose
 
-## make down
+### `make down`
 Make rule to bring the whole infra and containers down with docker compose
 
-## make clean
+### `make clean`
 Make rule to clean all the Docker images and docker containers
 
-## make fclean
+### `make fclean`
 Make rule to to delete all Docker related stuff as make clean but it also deletes volumes, networks and images.
 
 
