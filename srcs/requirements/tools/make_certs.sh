@@ -4,7 +4,7 @@ directory="./srcs/requirements/nginx"
 cert_name="segarcia.42.fr.crt"
 cert_key="segarcia.42.fr.key"
 
-if [ -e "$directory/tools/$cert_name" ] && [ -e "$directory/tools/$cert_key"]; then
+if [ -e "$directory/tools/$cert_name" ] && [ -e "$directory/tools/$cert_key" ]; then
 	echo "CERTS FOUND"
 else
 	if [ -d "$directory/tools" ]; then

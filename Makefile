@@ -36,7 +36,7 @@ drun:
 build:
 	@printf "$(CURSIVE)$(GREEN)- Building $(NAME) ...\n$(RESET)"
 	@printf "$(CURSIVE)$(GREEN)- Creating DIRS for Volumes ...\n"
-	@bash srcs/requirements/tools/make_dir.shi
+	@bash srcs/requirements/tools/make_dir.sh
 	@printf "$(CURSIVE)$(GREEN)- Creating certificates SSL ...\n$(RESET)"
 	@bash srcs/requirements/tools/make_certs.sh
 	@printf "$(CURSIVE)$(PURPLE)- Launching docker-compose -- build ...\n$(RESET)"
